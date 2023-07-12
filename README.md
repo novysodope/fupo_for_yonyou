@@ -48,3 +48,5 @@
 - 如您在使用本工具的过程中存在任何非法行为，您将自行承担所有后果，本工具所有开发者和所有贡献者不承担任何法律及连带责任；
 - 除非您已充分阅读、完全理解并接受本协议所有条款，否则，请您不要安装并使用本工具；
 - 您的使用行为或者您以其他任何明示或者默示方式表示接受本协议的，即视为您已阅读并同意本协议的约束。
+
+[![Stargazers over time](https://starchart.cc/novysodope/yonyou-check.svg)](https://github.com/novysodope/yonyou-check)
