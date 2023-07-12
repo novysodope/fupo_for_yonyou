@@ -49,7 +49,7 @@
 - 除非您已充分阅读、完全理解并接受本协议所有条款，否则，请您不要安装并使用本工具；
 - 您的使用行为或者您以其他任何明示或者默示方式表示接受本协议的，即视为您已阅读并同意本协议的约束。
 
-### Stargazers over time
+
 
 [![Stargazers over time](https://starchart.cc/novysodope/yonyou-check.svg)](https://starchart.cc/novysodope/yonyou-check)
 
