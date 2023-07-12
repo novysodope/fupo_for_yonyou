@@ -51,5 +51,5 @@
 
 
 
-[![Stargazers over time](https://starchart.cc/novysodope/yonyou-check.svg)](https://starchart.cc/novysodope/yonyou-check)
+[![Stargazers over time](https://starchart.cc/novysodope/yonyou_check.svg)](https://starchart.cc/novysodope/yonyou_check)
 
