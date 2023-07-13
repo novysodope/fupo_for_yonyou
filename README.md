@@ -1,4 +1,4 @@
- ![Github stars](https://img.shields.io/github/stars/novysodope/fupo_for_yonyou.svg)不想努力就用它 
+ ![Github stars](https://img.shields.io/github/stars/novysodope/fupo_for_yonyou.svg)  不想努力就用它 
 
 
 ****************************************
