@@ -9,7 +9,7 @@
 ```bash
 ./fupo_for_yonyou -u http[s]://1.1.1.1/
 ```
-
+ 
 ***目前支持的漏洞检测有：***
 
 - 用友 NC bsh.servlet.BshServlet 远程命令执行漏洞
