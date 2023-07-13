@@ -39,11 +39,14 @@
 - ~~用友 GRP U8 forgetPassword_old.jsp SQL注入漏洞 -未实现~~
 - ~~用友 畅捷通 ajaxpro 反序列化漏洞 -未实现~~
 - ~~用友 畅捷通 Controller SQL注入漏洞 -未实现~~
-- ~~用友 NC FileReceiveServlet反序列化 -未实现~~
-- ~~用友NCcloud accept任意文件上传 -未实现~~
-- ~~用友NC MessageServlet反序列化 -未实现~~
-- ~~用友NC UploadServlet反序列化 -未实现~~
-- ~~用友NC MonitorServlet反序列化 -未实现~~
+- 用友 NC FileReceiveServlet反序列化 ~~-未实现~~1.0.1已更新
+- 用友 NCcloud accept任意文件上传 ~~-未实现~~1.0.1已更新
+- 用友 NC MessageServlet反序列化 ~~-未实现~~1.0.1已更新
+- 用友 NC UploadServlet反序列化 ~~-未实现~~1.0.1已更新
+- 用友 NC MonitorServlet反序列化 ~~-未实现~~1.0.1已更新
+- 用友 NC service 接口信息泄露漏洞 -1.0.1增加
+- 用友 NC IUpdateService XXE漏洞漏洞 -1.0.1增加
+
 
 <img width="597" alt="2bd425e224032fd5dc6e3ef764ec83d" src="https://github.com/novysodope/yonyou-/assets/45167857/6fa5a116-7552-4b12-acd4-67e712c10ff9">
 
