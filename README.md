@@ -51,9 +51,11 @@
 <img width="597" alt="2bd425e224032fd5dc6e3ef764ec83d" src="https://github.com/novysodope/yonyou-/assets/45167857/6fa5a116-7552-4b12-acd4-67e712c10ff9">
 
 
+
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/novysodope/yonyou_check.svg)](https://starchart.cc/novysodope/yonyou_check)
+[![Stargazers over time](https://starchart.cc/novysodope/fupo_for_yonyou.svg)](https://starchart.cc/novysodope/fupo_for_yonyou)
+
 
 
 
