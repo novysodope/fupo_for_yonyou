@@ -1,3 +1,5 @@
+不想努力就用它  ![Github stars](https://img.shields.io/github/stars/novysodope/fupo_for_yonyou.svg)
+
 
 ****************************************
                                        
@@ -9,7 +11,7 @@
 ```bash
 ./fupo_for_yonyou -u http[s]://1.1.1.1/
 ```
-详细的更新信息请自行查看releases
+***详细的更新信息请自行查看releases***
 
 
 ***目前支持的漏洞检测有：***
@@ -51,12 +53,6 @@
 
 
 <img width="597" alt="2bd425e224032fd5dc6e3ef764ec83d" src="https://github.com/novysodope/yonyou-/assets/45167857/6fa5a116-7552-4b12-acd4-67e712c10ff9">
-
-
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/novysodope/fupo_for_yonyou.svg)](https://starchart.cc/novysodope/fupo_for_yonyou)
 
 
 
