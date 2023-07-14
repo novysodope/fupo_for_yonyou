@@ -50,6 +50,7 @@
 - 用友 NC MonitorServlet反序列化 ~~-未实现~~1.0.1已更新
 - 用友 NC service 接口信息泄露漏洞 -1.0.1增加
 - 用友 NC IUpdateService XXE漏洞漏洞 -1.0.1增加
+- 用友 FE协作办公平台 templateOfTaohong_manager目录遍历漏洞 -1.0.1.2增加
 
 
 <img width="597" alt="2bd425e224032fd5dc6e3ef764ec83d" src="https://github.com/novysodope/yonyou-/assets/45167857/6fa5a116-7552-4b12-acd4-67e712c10ff9">
