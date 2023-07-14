@@ -11,7 +11,7 @@
 ```bash
 ./fupo_for_yonyou -u http[s]://1.1.1.1/
 ```
-# 详细的更新信息请自行查看[releases](https://github.com/novysodope/fupo_for_yonyou/releases) 
+# 20230714新版本已发，详细的更新信息请自行查看[releases](https://github.com/novysodope/fupo_for_yonyou/releases) 
 
 ***目前支持的漏洞检测有：***
 
