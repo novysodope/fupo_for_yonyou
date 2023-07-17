@@ -11,7 +11,7 @@
 ```bash
 ./fupo_for_yonyou -u http[s]://1.1.1.1/
 ```
-# 20230714新版本已发，详细的更新信息请自行查看[releases](https://github.com/novysodope/fupo_for_yonyou/releases) 
+# 20230717新版本已发，详细的更新信息请自行查看[releases](https://github.com/novysodope/fupo_for_yonyou/releases) 
 
 ***目前支持的漏洞检测有：***
 
@@ -52,7 +52,8 @@
 - 用友 FE协作办公平台 templateOfTaohong_manager目录遍历漏洞 -1.0.1.2增加
 
 
-<img width="597" alt="2bd425e224032fd5dc6e3ef764ec83d" src="https://github.com/novysodope/yonyou-/assets/45167857/6fa5a116-7552-4b12-acd4-67e712c10ff9">
+<img width="773" alt="85e54514dd4ba298d7964b281c8bf5a" src="https://github.com/novysodope/fupo_for_yonyou/assets/45167857/785b88c9-c821-4de2-b429-32d703f5b39a">
+
 
 
 
