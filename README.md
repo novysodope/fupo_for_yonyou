@@ -1,16 +1,4 @@
-https://x.threatbook.com/v5/article?threatInfoID=51225
-![image](https://github.com/novysodope/fupo_for_yonyou/assets/45167857/c4fc2905-c35b-400f-bdd2-bc92e94ebcb6)
-
-![image](https://img0.baidu.com/it/u=2433383650,2870095984&fm=253&fmt=auto&app=138&f=JPEG?w=469&h=500)
-
- 
- 
- 
- 
- 
- 
- 
- ![Github stars](https://img.shields.io/github/stars/novysodope/fupo_for_yonyou.svg)  不想努力就用它 
+![Github stars](https://img.shields.io/github/stars/novysodope/fupo_for_yonyou.svg)  不想努力就用它 
 
 
 ****************************************
@@ -22,8 +10,12 @@ https://x.threatbook.com/v5/article?threatInfoID=51225
  
 ```bash
 ./fupo_for_yonyou -u http[s]://1.1.1.1/
+
+./fupo_for_yonyou -f url.txt
+
+SOCKS5：-socks5 socks5://0.0.0.0:1080
 ```
-# 20230717新版本已发，详细的更新信息请自行查看[releases](https://github.com/novysodope/fupo_for_yonyou/releases) 
+# 20230724新版本已发，详细的更新信息请自行查看[releases](https://github.com/novysodope/fupo_for_yonyou/releases) 
 
 ***目前支持的漏洞检测有：***
 
@@ -78,4 +70,8 @@ https://x.threatbook.com/v5/article?threatInfoID=51225
 - 除非您已充分阅读、完全理解并接受本协议所有条款，否则，请您不要安装并使用本工具；
 - 您的使用行为或者您以其他任何明示或者默示方式表示接受本协议的，即视为您已阅读并同意本协议的约束。
 
+https://x.threatbook.com/v5/article?threatInfoID=51225
 
+![image](https://github.com/novysodope/fupo_for_yonyou/assets/45167857/c4fc2905-c35b-400f-bdd2-bc92e94ebcb6)
+
+![image](https://img0.baidu.com/it/u=2433383650,2870095984&fm=253&fmt=auto&app=138&f=JPEG?w=469&h=500)
