@@ -13,7 +13,7 @@
 
 ./fupo_for_yonyou -f url.txt
 
-SOCKS5：-socks5 socks5://0.0.0.0:1080
+SOCKS5：-socks5 socks5://0.0.0.0:1080 OR 0.0.0.0:1080
 ```
 # 20230724新版本已发，详细的更新信息请自行查看[releases](https://github.com/novysodope/fupo_for_yonyou/releases) 
 
