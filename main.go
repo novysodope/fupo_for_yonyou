@@ -133,7 +133,7 @@ func helpArg() {
 	fmt.Println("批量检测：fupo_for_yonyou -f url.txt")
 	fmt.Println("SOCKS5：-socks5 socks5://0.0.0.0:1080\n")
 
-	fmt.Println(Green + "目前支持的漏洞检测：\n" + Reset)
+	fmt.Println(Green + "目前工具内部支持的漏洞检测：\n" + Reset)
 	fmt.Println(Yellow + "用友 NC bsh.servlet.BshServlet 远程命令执行漏洞")
 	fmt.Println("用友 U8 OA getSessionList.jsp 敏感信息泄漏漏洞")
 	fmt.Println("用友 FE协作办公平台 templateOfTaohong_manager目录遍历漏洞")
