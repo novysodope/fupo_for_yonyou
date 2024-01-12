@@ -85,7 +85,8 @@ func main() {
 	}
 	if address != "" {
 		address = strings.TrimSuffix(address, "/")
-		targetParse(address, socks5, Red, Green, Yellow, Reset, Cyan)
+
+		TargetParse(address, socks5, Red, Green, Yellow, Reset, Cyan)
 	}
 
 	//批量扫描
@@ -120,7 +121,7 @@ func main() {
 				urls = strings.TrimSuffix(urls, "/")
 				output := fmt.Sprintf("["+Yellow+"INFO"+Reset+"] %s ", urls)
 				fmt.Println(output)
-				targetParse(urls, socks5, Red, Green, Yellow, Reset, Cyan)
+				TargetParse(urls, socks5, Red, Green, Yellow, Reset, Cyan)
 			}
 		}
 	}
