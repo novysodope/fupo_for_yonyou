@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func targetParse(address string, proxyAddr string, Red string, Green string, Yellow string, Reset string, Cyan string) {
+func TargetParse(address string, proxyAddr string, Red string, Green string, Yellow string, Reset string, Cyan string) {
 	if proxyAddr != "" {
 		// 使用 socks5 代理创建 Dialer
 		dialer, err := proxy.SOCKS5("tcp", proxyAddr, nil, proxy.Direct)
