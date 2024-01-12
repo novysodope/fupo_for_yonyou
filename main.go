@@ -109,7 +109,6 @@ func main() {
 					continue // 跳过空行
 				}
 				urlCount++
-				//}
 				if err := scanner.Err(); err != nil {
 					if err == io.EOF {
 						// 文件已到达末尾，正常结束
@@ -141,7 +140,7 @@ func helpArg() {
 	fmt.Println("用友 GRP-U8 UploadFileData 任意文件上传漏洞")
 	fmt.Println("用友 GRP-U8 Proxy SQL注入")
 	fmt.Println("用友 U8 OA test.jsp SQL注入漏洞")
-	fmt.Println("用友 Uapjs JNDI注入漏洞")
+	fmt.Println("用友 Uapjs 远程代码执行漏洞")
 	fmt.Println("用友 畅捷通T-CRM get_usedspace.php SQL注入漏洞")
 	fmt.Println("用友 畅捷通T+ Upload.aspx 任意文件上传漏洞")
 	fmt.Println("用友 畅捷通T+ RecoverPassword.aspx 管理员密码修改漏洞")
@@ -158,10 +157,6 @@ func helpArg() {
 	fmt.Println("用友 files 反序列化漏洞")
 	fmt.Println("用友 文件服务器 反序列化漏洞")
 	fmt.Println("用友 畅捷通T+ DownloadProxy任意文件读取漏洞")
-	//log.Println("用友 GRP U8 XXNode SQL注入漏洞 -未实现")
-	//log.Println("用友 GRP U8 forgetPassword_old.jsp SQL注入漏洞 -未实现")
-	//log.Println("用友 畅捷通 ajaxpro 反序列化漏洞 -未实现")
-	//log.Println("用友 畅捷通 Controller SQL注入漏洞 -未实现")
 	fmt.Println("用友 NC FileReceiveServlet反序列化漏洞")
 	fmt.Println("用友 NC cloud accept任意文件上传漏洞")
 	fmt.Println("用友 NC MessageServlet反序列化漏洞")
