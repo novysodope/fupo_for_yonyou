@@ -34,5 +34,5 @@ func TargetParse(address string, proxyAddr string, Red string, Green string, Yel
 		Transport: tr,
 	}
 
-	moduleConf(address, client, Red, Green, Yellow, Reset, Cyan)
+	ModuleConf(address, client, Red, Green, Yellow, Reset, Cyan)
 }
