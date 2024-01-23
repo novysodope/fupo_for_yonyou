@@ -6,6 +6,17 @@
 - 更新漏洞检测
 - 其他
 
+## 编译
+可以通过`go env -w [variable]`使用交叉编译
+
+**打包**
+```bash
+go install
+```
+
+编译好的文件在`$GOPATH/bin`下，可以通过执行`go env`查看文件夹位置
+
+## 使用
 ```bash
 C:\Users\Administrator\go\bin>FoPoForYonyou.exe -h
 
