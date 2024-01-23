@@ -7,9 +7,12 @@
 - 其他
 
 ## 编译
+通过下载源码编译时，注意`Scan`模块的头部引用，需要把`FoPoForYonyou2.0`改为`fupo_for_yonyou`
+
+### 跨平台
 可以通过`go env -w [variable]`使用交叉编译
 
-**打包**
+### 打包
 ```bash
 go install
 ```
