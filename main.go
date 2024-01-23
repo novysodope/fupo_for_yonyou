@@ -139,7 +139,7 @@ func helpArg() {
 	fmt.Println("用友 FE协作办公平台 templateOfTaohong_manager目录遍历漏洞")
 	fmt.Println("用友 NCFindWeb 任意文件读取漏洞")
 	fmt.Println("用友 GRP-U8 UploadFileData 任意文件上传漏洞")
-	fmt.Println("用友 GRP-U8 Proxy SQL注入")
+	fmt.Println("用友 GRP-U8 Proxy SQL注入漏洞")
 	fmt.Println("用友 U8 OA test.jsp SQL注入漏洞")
 	fmt.Println("用友 Uapjs 远程代码执行漏洞")
 	fmt.Println("用友 畅捷通T-CRM get_usedspace.php SQL注入漏洞")
@@ -165,7 +165,7 @@ func helpArg() {
 	fmt.Println("用友 NC service 接口信息泄露漏洞")
 
 	//3.0优化
-	fmt.Println("用友 NC IUpdateService XXE漏洞漏洞")
+	fmt.Println("用友 NC IUpdateService XXE漏洞")
 	fmt.Println("用友 NC cloud accept任意文件上传漏洞")
 
 	//3.0新增
