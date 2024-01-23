@@ -67,7 +67,7 @@ SOCKS5：-socks5 socks5://0.0.0.0:1080
 用友 NC UploadServlet反序列化漏洞
 用友 NC MonitorServlet反序列化漏洞
 用友 NC service 接口信息泄露漏洞
-用友 NC IUpdateService XXE漏洞漏洞
+用友 NC IUpdateService XXE漏洞
 用友 NC cloud accept任意文件上传漏洞
 用友 U8 cloud KeyWordDetailReportQuery SQL注入漏洞
 用友 GRP-U8 ufgovbank XXE漏洞
