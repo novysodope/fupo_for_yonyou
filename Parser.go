@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fupo_for_yonyou/Distribute"
 	"crypto/tls"
 	"fmt"
 	"golang.org/x/net/proxy"
@@ -34,5 +35,5 @@ func TargetParse(address string, proxyAddr string, Red string, Green string, Yel
 		Transport: tr,
 	}
 
-	ModuleConf(address, client, Red, Green, Yellow, Reset, Cyan)
+	Distribute.ModuleConf(address, client, Red, Green, Yellow, Reset, Cyan)
 }
