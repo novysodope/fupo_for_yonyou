@@ -131,7 +131,6 @@ func main() {
 func helpArg() {
 	fmt.Println("单条检测：fupo_for_yonyou -u http[s]://1.1.1.1/")
 	fmt.Println("批量检测：fupo_for_yonyou -f url.txt")
-	fmt.Println("自定义漏洞URL：fupo_for_yonyou -u http[s]://1.1.1.1/ -y vuln.ini")
 	fmt.Println("SOCKS5：-socks5 socks5://0.0.0.0:1080\n")
 
 	fmt.Println(Green + "目前支持的漏洞检测：\n" + Reset)
