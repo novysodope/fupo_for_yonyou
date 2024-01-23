@@ -17,7 +17,7 @@
 go install
 ```
 
-编译好的文件在`$GOPATH/bin`下，可以通过执行`go env`查看文件夹位置，也可以到[releases](https://github.com/novysodope/fupo_for_yonyou/releases)下载
+编译好的文件在`$GOPATH/bin`下，可以通过执行`go env`查看文件夹位置，也可以到[releases](https://github.com/novysodope/fupo_for_yonyou/releases)下载已编译好的文件
 
 ## 使用
 ```bash
