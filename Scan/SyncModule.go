@@ -1,7 +1,7 @@
 package Scan
 
 import (
-	"fupo_for_yonyou/Utils"
+	"FoPoForYonyou2.0/Utils"
 	"fmt"
 	"log"
 	"net"
