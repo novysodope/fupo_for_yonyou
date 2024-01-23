@@ -1,7 +1,7 @@
 package Distribute
 
 import (
-	"FoPoForYonyou2.0/Scan"
+	"fupo_for_yonyou/Scan"
 	"net/http"
 	"time"
 )
@@ -9,4 +9,51 @@ import (
 func ModuleConf(address string, client *http.Client, Red string, Green string, Yellow string, Reset string, Cyan string) {
 	currentTime := time.Now().Format("15:04:05")
 	Scan.SyncScan(address, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.GetSessionListScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.BshScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.YyOaSqlScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.TemplateOfTaohong_managerScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.NCFindWebScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.UploadFileDataScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.GRPProxyScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.UapjsjndiScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.GetusedspacesqlScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.YCjtUploadScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.RecoverPasswordScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.ServiceDispatcherServletScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.U8AppProxyScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.JspjndiyScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.JspjndieScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.UapwsloginScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.AjaxjndiScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.UapwsauhtScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.FilesdeScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.UapwsauthScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.FsdeScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.DownloadProxyScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.ImageUploadScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.FileReceiveServletcan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.AcceptuploadScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.NCMessageServletScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.UploadServletScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.MonitorServletScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.IUpdateServicexxeScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.ServiceinforScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.KeyWordDetailReportQueryScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.UfgovbankScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.MobileUploadIconScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.NcwordScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.PortalreadfileScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.U8help2Scan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.U8getemaildataScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.License_checkSQLiScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.SelectDMJEScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.Bx_historyDataCheckScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.Smartweb2XXEScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.Obr_zdybxd_checkScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.GetStoreWarehouseByStoreScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.CheckMutexScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.GetDecAllUsersScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	Scan.GNRemoteScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+	
 }
