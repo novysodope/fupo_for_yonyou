@@ -1,14 +1,18 @@
 # 遵纪守法
 ## 本工具仅用于企业资产隐患自查，请勿用于违法行为
-**fupo_for_yonyou 3.0**
+## 更新记录
+#### 20250718 fupo_for_yonyou 3.1
+- 解决issue里的所有报错问题
+- 增加http代理：https://github.com/novysodope/fupo_for_yonyou/issues/9
+- 优化扫描代码，增加准确度
+- 其他：增加多个漏洞扫描模块（还未上传）
+#### fupo_for_yonyou 3.0
 - 开源
 - 重构代码
 - 更新漏洞检测
 - 其他
 
 ## 编译
-如果需要下载源码自己编译，注意`Scan`模块的头部引用，需要把`FoPoForYonyou2.0`改为`fupo_for_yonyou`
-
 ### 跨平台
 可以通过`go env -w [variable]`使用交叉编译
 
@@ -17,11 +21,10 @@
 go install
 ```
 
-编译好的文件在`$GOPATH/bin`下，可以通过执行`go env`查看文件夹位置，也可以到[releases](https://github.com/novysodope/fupo_for_yonyou/releases)下载已编译好的文件
+编译好的文件在`$GOPATH/bin`下，可以通过执行`go env`查看文件夹位置，如果不想编译可以到[releases](https://github.com/novysodope/fupo_for_yonyou/releases)下载已编译好的文件
 
 ## 使用
 ```bash
-C:\Users\Administrator\go\bin>FoPoForYonyou.exe -h
 
 ███████╗██╗   ██╗██████╗  ██████╗
 ██╔════╝██║   ██║██╔══██╗██╔═══██╗
@@ -29,12 +32,13 @@ C:\Users\Administrator\go\bin>FoPoForYonyou.exe -h
 ██╔══╝  ██║   ██║██╔═══╝ ██║   ██║
 ██║     ╚██████╔╝██║     ╚██████╔╝
 ╚═╝      ╚═════╝ ╚═╝      ╚═════╝
-                  用友全系列漏洞检测v3  Fupo's series
+                  用友全系列漏洞检测v3.1  Fupo's series
 —————————————————————————————————————————————————————
 
 单条检测：fupo_for_yonyou -u http[s]://1.1.1.1/
 批量检测：fupo_for_yonyou -f url.txt
 SOCKS5：-socks5 socks5://0.0.0.0:1080
+HTTP代理：-proxy http://127.0.0.1:8080
 
 目前支持的漏洞检测：
 
@@ -43,7 +47,7 @@ SOCKS5：-socks5 socks5://0.0.0.0:1080
 用友 FE协作办公平台 templateOfTaohong_manager目录遍历漏洞
 用友 NCFindWeb 任意文件读取漏洞
 用友 GRP-U8 UploadFileData 任意文件上传漏洞
-用友 GRP-U8 Proxy SQL注入
+用友 GRP-U8 Proxy SQL注入漏洞
 用友 U8 OA test.jsp SQL注入漏洞
 用友 Uapjs 远程代码执行漏洞
 用友 畅捷通T-CRM get_usedspace.php SQL注入漏洞
@@ -86,5 +90,3 @@ SOCKS5：-socks5 socks5://0.0.0.0:1080
 用友 畅捷通T+ GetDecAllUsers 信息泄露漏洞
 用友 畅捷通远程通 GNRemote.dll SQL注入漏洞
 ```
-
-
