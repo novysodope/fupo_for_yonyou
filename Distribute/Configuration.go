@@ -63,7 +63,6 @@ func ModuleConf(address string, client *http.Client, Red, Green, Yellow, Reset, 
 		{Scan.GetDecAllUsersScan, "GetDecAllUsersScan"},
 		{Scan.GNRemoteScan, "GNRemoteScan"},
 	}
-
 	for _, sc := range scans {
 		runScan := func() {
 			defer func() {
