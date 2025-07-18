@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io"
+	"net/url"
 	"os"
 	"strings"
 )
@@ -28,7 +28,7 @@ func showStartupScreen() {
 	fmt.Println("██╔══╝  ██║   ██║██╔═══╝ ██║   ██║")
 	fmt.Println("██║     ╚██████╔╝██║     ╚██████╔╝")
 	fmt.Println("╚═╝      ╚═════╝ ╚═╝      ╚═════╝ ")
-	fmt.Println("                  " + Yellow + "用友全系列漏洞检测v3  Fupo's series" + Reset)
+	fmt.Println("                  " + Yellow + "用友全系列漏洞检测v3.1  Fupo's series" + Reset)
 	fmt.Println("—————————————————————————————————————————————————————")
 	fmt.Println(Reset)
 
@@ -36,102 +36,106 @@ func showStartupScreen() {
 
 func main() {
 	showStartupScreen()
+
 	if len(os.Args) < 2 {
-		output := fmt.Sprintf("[" + Red + "ERROR" + Reset + "] -h查看使用帮助\n")
-		fmt.Println(output)
-		return
-	}
-	//取出控制台参数，判断参数
-	helpArgFunc := false
-	for _, arg := range os.Args {
-		if arg == "-h" {
-			helpArgFunc = true
-			break
-		}
-	}
-	//根据参数进入对应的方法
-	if helpArgFunc {
-		helpArg()
+		fmt.Println("[" + Red + "ERROR" + Reset + "] -h 查看使用帮助")
 		return
 	}
 
-	//扫描参数，从第二个参数开始获取
-	args := os.Args[1:]
-	argBatch := os.Args[1:]
-	argsocks := os.Args[1:]
-	var address string
-	var filePath string
-	var socks5 string
+	var (
+		address    string
+		socks5Addr string
+		httpProxy  string
+		filePath   string
+	)
 
-	//socks5代理
-	for i := 0; i < len(argsocks); i++ {
-		if argsocks[i] == "-socks5" && i+1 < len(argsocks) {
-			socks5 = argsocks[i+1]
-			if strings.HasPrefix(socks5, "socks5://") {
-				socks5 = socks5[len("socks5://"):]
+	for i := 1; i < len(os.Args); i++ {
+		switch os.Args[i] {
+		case "-h":
+			helpArg()
+			return
+
+		case "-u":
+			if i+1 < len(os.Args) {
+				address = strings.TrimSuffix(os.Args[i+1], "/")
+				fmt.Printf("["+Yellow+"INFO"+Reset+"] %s\n", address)
+				i++
 			}
-			output := fmt.Sprintf("["+Green+"SOCKS5"+Reset+"] %s ", socks5)
-			fmt.Println(output)
+
+		case "-socks5":
+			if i+1 < len(os.Args) {
+				raw := os.Args[i+1]
+				if u, err := url.Parse(raw); err == nil && u.Host != "" {
+					socks5Addr = u.Host
+				} else {
+					socks5Addr = raw
+				}
+				fmt.Printf("["+Green+"SOCKS5"+Reset+"] %s\n", socks5Addr)
+				i++
+			}
+
+		case "-proxy":
+			if i+1 < len(os.Args) {
+				raw := os.Args[i+1]
+				u, err := url.Parse(raw)
+				if err != nil || u.Host == "" {
+					fmt.Println("HTTP 代理地址格式错误，应为 http://host:port")
+					os.Exit(1)
+				}
+				httpProxy = u.String()
+				fmt.Printf("["+Blue+"HTTP_PROXY"+Reset+"] %s\n", httpProxy)
+				i++
+			}
+
+		case "-f":
+			if i+1 < len(os.Args) {
+				filePath = os.Args[i+1]
+				i++
+			}
 		}
 	}
 
-	//单个扫描
-	for i := 0; i < len(args); i++ {
-		if args[i] == "-u" && i+1 < len(args) {
-			address = args[i+1]
-			output := fmt.Sprintf("["+Yellow+"INFO"+Reset+"] %s ", address)
-			fmt.Println(output)
-		}
+	if socks5Addr != "" && httpProxy != "" {
+		fmt.Println("[" + Magenta + "WARN" + Reset + "] 同时指定了 HTTP 代理 和 SOCKS5 代理，将优先使用 HTTP 代理")
 	}
+
 	if address != "" {
-		address = strings.TrimSuffix(address, "/")
-
-		TargetParse(address, socks5, Red, Green, Yellow, Reset, Cyan)
+		TargetParse(address, httpProxy, socks5Addr, Red, Green, Yellow, Reset, Cyan)
 	}
 
-	//批量扫描
-	//https://github.com/novysodope/fupo_for_yonyou/issues/2
-	for i := 0; i < len(argBatch); i++ {
-		if argBatch[i] == "-f" && i+1 < len(argBatch) {
+	if filePath != "" {
+		file, err := os.Open(filePath)
+		if err != nil {
+			fmt.Println("打开文件失败:", err)
+			return
+		}
+		defer file.Close()
 
-			filePath = argBatch[i+1]
-			file, err := os.Open(filePath)
-			if err != nil {
-				fmt.Println("打开文件失败:", err)
-				return
+		scanner := bufio.NewScanner(file)
+		count := 0
+		for scanner.Scan() {
+			url := strings.TrimSpace(scanner.Text())
+			if url == "" {
+				continue
 			}
-			defer file.Close()
-
-			scanner := bufio.NewScanner(file)
-			urlCount := 0
-			for scanner.Scan() {
-				urls := strings.TrimSpace(scanner.Text())
-				if urls == "" {
-					continue // 跳过空行
-				}
-				urlCount++
-				if err := scanner.Err(); err != nil {
-					if err == io.EOF {
-						// 文件已到达末尾，正常结束
-						fmt.Printf("初始化完成，一共有 %d 条 URL\n", urlCount)
-					} else {
-						fmt.Println("读取文件出错:", err)
-					}
-				}
-				urls = strings.TrimSuffix(urls, "/")
-				output := fmt.Sprintf("["+Yellow+"INFO"+Reset+"] %s ", urls)
-				fmt.Println(output)
-				TargetParse(urls, socks5, Red, Green, Yellow, Reset, Cyan)
-			}
+			url = strings.TrimSuffix(url, "/")
+			count++
+			fmt.Printf("["+Yellow+"INFO"+Reset+"] %s\n", url)
+			TargetParse(address, httpProxy, socks5Addr, Red, Green, Yellow, Reset, Cyan)
+		}
+		if err := scanner.Err(); err != nil {
+			fmt.Println("读取文件出错:", err)
+		} else {
+			fmt.Printf("初始化完成，共 %d 条 URL\n", count)
 		}
 	}
-
 }
 
 func helpArg() {
 	fmt.Println("单条检测：fupo_for_yonyou -u http[s]://1.1.1.1/")
 	fmt.Println("批量检测：fupo_for_yonyou -f url.txt")
-	fmt.Println("SOCKS5：-socks5 socks5://0.0.0.0:1080\n")
+	fmt.Println("SOCKS5：-socks5 socks5://0.0.0.0:1080")
+	fmt.Println("HTTP代理：-proxy http://127.0.0.1:8080\n")
 
 	fmt.Println(Green + "目前支持的漏洞检测：\n" + Reset)
 	fmt.Println(Yellow + "用友 NC bsh.servlet.BshServlet 远程命令执行漏洞")
@@ -185,6 +189,6 @@ func helpArg() {
 	fmt.Println("用友 畅捷通Tplus CheckMutex SQL注入漏洞")
 	fmt.Println("用友 畅捷通T+ GetDecAllUsers 信息泄露漏洞")
 	fmt.Println("用友 畅捷通远程通 GNRemote.dll SQL注入漏洞")
-	
+
 	fmt.Println(Reset)
 }
