@@ -1,59 +1,80 @@
 package Distribute
 
 import (
+	"fmt"
 	"fupo_for_yonyou/Scan"
+	"log"
 	"net/http"
 	"time"
 )
 
-func ModuleConf(address string, client *http.Client, Red string, Green string, Yellow string, Reset string, Cyan string) {
+func ModuleConf(address string, client *http.Client, Red, Green, Yellow, Reset, Cyan string) {
 	currentTime := time.Now().Format("15:04:05")
-	Scan.SyncScan(address, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.GetSessionListScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.BshScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.YyOaSqlScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.TemplateOfTaohong_managerScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.NCFindWebScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.UploadFileDataScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.GRPProxyScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.UapjsjndiScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.GetusedspacesqlScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.YCjtUploadScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.RecoverPasswordScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.ServiceDispatcherServletScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.U8AppProxyScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.JspjndiyScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.JspjndieScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.UapwsloginScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.AjaxjndiScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.UapwsauhtScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.FilesdeScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.UapwsauthScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.FsdeScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.DownloadProxyScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.ImageUploadScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.FileReceiveServletcan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.AcceptuploadScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.NCMessageServletScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.UploadServletScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.MonitorServletScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.IUpdateServicexxeScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.ServiceinforScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.KeyWordDetailReportQueryScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.UfgovbankScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.MobileUploadIconScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.NcwordScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.PortalreadfileScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.U8help2Scan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.U8getemaildataScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.License_checkSQLiScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.SelectDMJEScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.Bx_historyDataCheckScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.Smartweb2XXEScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.Obr_zdybxd_checkScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.GetStoreWarehouseByStoreScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.CheckMutexScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.GetDecAllUsersScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	Scan.GNRemoteScan(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
-	
+
+	scans := []struct {
+		fn   func(string, *http.Client, string, string, string, string, string, string)
+		name string
+	}{
+		{Scan.SyncScan, "SyncScan"},
+		{Scan.GetSessionListScan, "GetSessionListScan"},
+		{Scan.BshScan, "BshScan"},
+		{Scan.YyOaSqlScan, "YyOaSqlScan"},
+		{Scan.TemplateOfTaohong_managerScan, "TemplateOfTaohong_managerScan"},
+		{Scan.NCFindWebScan, "NCFindWebScan"},
+		{Scan.UploadFileDataScan, "UploadFileDataScan"},
+		{Scan.GRPProxyScan, "GRPProxyScan"},
+		{Scan.UapjsjndiScan, "UapjsjndiScan"},
+		{Scan.GetusedspacesqlScan, "GetusedspacesqlScan"},
+		{Scan.YCjtUploadScan, "YCjtUploadScan"},
+		{Scan.RecoverPasswordScan, "RecoverPasswordScan"},
+		{Scan.ServiceDispatcherServletScan, "ServiceDispatcherServletScan"},
+		{Scan.U8AppProxyScan, "U8AppProxyScan"},
+		{Scan.JspjndiyScan, "JspjndiyScan"},
+		{Scan.JspjndieScan, "JspjndieScan"},
+		{Scan.UapwsloginScan, "UapwsloginScan"},
+		{Scan.AjaxjndiScan, "AjaxjndiScan"},
+		{Scan.UapwsauhtScan, "UapwsauhtScan"},
+		{Scan.FilesdeScan, "FilesdeScan"},
+		{Scan.UapwsauthScan, "UapwsauthScan"},
+		{Scan.FsdeScan, "FsdeScan"},
+		{Scan.DownloadProxyScan, "DownloadProxyScan"},
+		{Scan.ImageUploadScan, "ImageUploadScan"},
+		{Scan.FileReceiveServletcan, "FileReceiveServletcan"},
+		{Scan.AcceptuploadScan, "AcceptuploadScan"},
+		{Scan.NCMessageServletScan, "NCMessageServletScan"},
+		{Scan.UploadServletScan, "UploadServletScan"},
+		{Scan.MonitorServletScan, "MonitorServletScan"},
+		{Scan.IUpdateServicexxeScan, "IUpdateServicexxeScan"},
+		{Scan.ServiceinforScan, "ServiceinforScan"},
+		{Scan.KeyWordDetailReportQueryScan, "KeyWordDetailReportQueryScan"},
+		{Scan.UfgovbankScan, "UfgovbankScan"},
+		{Scan.MobileUploadIconScan, "MobileUploadIconScan"},
+		{Scan.NcwordScan, "NcwordScan"},
+		{Scan.PortalreadfileScan, "PortalreadfileScan"},
+		{Scan.U8help2Scan, "U8help2Scan"},
+		{Scan.U8getemaildataScan, "U8getemaildataScan"},
+		{Scan.License_checkSQLiScan, "License_checkSQLiScan"},
+		{Scan.SelectDMJEScan, "SelectDMJEScan"},
+		{Scan.Bx_historyDataCheckScan, "Bx_historyDataCheckScan"},
+		{Scan.Smartweb2XXEScan, "Smartweb2XXEScan"},
+		{Scan.Obr_zdybxd_checkScan, "Obr_zdybxd_checkScan"},
+		{Scan.GetStoreWarehouseByStoreScan, "GetStoreWarehouseByStoreScan"},
+		{Scan.CheckMutexScan, "CheckMutexScan"},
+		{Scan.GetDecAllUsersScan, "GetDecAllUsersScan"},
+		{Scan.GNRemoteScan, "GNRemoteScan"},
+	}
+
+	for _, sc := range scans {
+		runScan := func() {
+			defer func() {
+				if r := recover(); r != nil {
+					log.Printf("[%s%s%s] [%sERROR%s] %s 扫描发生错误: %v", Cyan, currentTime, Reset, Red, Reset, sc.name, r)
+				}
+			}()
+			sc.fn(address, client, Red, Green, Yellow, Reset, Cyan, currentTime)
+		}
+		runScan()
+	}
+
+	fmt.Printf("扫描完成，共扫描了 %d 个模块，请注意查看保存的结果\n", len(scans))
 }
