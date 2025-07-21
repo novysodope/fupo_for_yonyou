@@ -190,5 +190,25 @@ func helpArg() {
 	fmt.Println("用友 畅捷通T+ GetDecAllUsers 信息泄露漏洞")
 	fmt.Println("用友 畅捷通远程通 GNRemote.dll SQL注入漏洞")
 
+	//3.1新增
+	fmt.Println("用友 U9 DynamaticExport.aspx 任意文件读取漏洞")
+	fmt.Println("用友 U8Cloud FilterCondAction SQL注入漏洞")
+	fmt.Println("用友 NC-Cloud process SQL注入漏洞")
+	fmt.Println("用友 NC FormItemServlet SQL注入漏洞")
+	fmt.Println("用友 NC-Cloud blobRefClassSearch FastJson反序列化漏洞")
+	fmt.Println("用友 U8cloud esnserver 远程代码执行漏洞")
+	fmt.Println("用友 U8-CRM ajaxgetborrowdata.php SQL注入漏洞")
+	fmt.Println("用友 NC Cloud queryPsnInfo SQL注入漏洞")
+	fmt.Println("用友 U8 Cloud MeasureQResultAction SQL注入漏洞")
+	fmt.Println("用友 NC yerfile/down SQL注入漏洞")
+	fmt.Println("用友 NC checkekey SQL 注入漏洞")
+	fmt.Println("用友 NC content SQL注入漏洞")
+	fmt.Println("用友 U8-CRM-reservationcomplete SQL注入漏洞")
+	fmt.Println("用友 U8-CRM-reservationcomplete 身份认证绕过漏洞")
+	fmt.Println("用友 U8 Cloud approveservlet SQL注入漏洞")
+	fmt.Println("用友 YonBIP yonbiplogin 任意文件读取漏洞")
+	fmt.Println("用友 U8 Cloud MultiRepChooseAction SQL注入漏洞")
+	fmt.Println("用友 NC IMetaWebService4BqCloud SQL注入漏洞")
+
 	fmt.Println(Reset)
 }
