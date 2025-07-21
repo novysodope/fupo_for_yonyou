@@ -95,6 +95,5 @@ func ModuleConf(address string, client *http.Client, Red, Green, Yellow, Reset, 
 		runScan()
 	}
 
-	// 3. 最后打印总数
 	fmt.Printf("扫描完成，共扫描了 %d 个模块，请注意查看保存的结果\n", len(scans))
 }
