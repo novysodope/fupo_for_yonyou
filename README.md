@@ -15,17 +15,12 @@
 ## 编译
 ### 跨平台
 - 在CMD中，可以通过配置`go env -w [variable]`使用交叉编译
-- 在Goland IDE的Terminal中，可以使用`$env:GOOS="darwin"; $env:GOARCH="amd64"; go build -o ./bin`使用交叉编译
+- 在Goland IDE的Terminal中，可以使用`$env:GOOS="darwin"; $env:GOARCH="amd64"; go build -o ./bin`进行交叉编译
 
 参考值：
 ```bash
 GOOS：linux、windows、darwin(macOS)
 GOARCH: amd64、arm、arm64
-```
-
-### 打包
-```bash
-go install
 ```
 
 编译好的文件在`$GOPATH/bin`下，可以通过执行`go env`查看文件夹位置，如果不想编译可以到[releases](https://github.com/novysodope/fupo_for_yonyou/releases)下载已编译好的文件
