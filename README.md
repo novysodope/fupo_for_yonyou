@@ -5,7 +5,7 @@
 - 解决issue里的所有报错问题
 - 增加http代理：https://github.com/novysodope/fupo_for_yonyou/issues/9
 - 优化扫描代码，提高准确度
-- 其他：增加多个漏洞扫描模块（还未上传，上传之后再发布releases）
+- 其他：增加多个漏洞扫描模块
 #### fupo_for_yonyou 3.0
 - 开源
 - 重构代码
@@ -89,4 +89,22 @@ HTTP代理：-proxy http://127.0.0.1:8080
 用友 畅捷通Tplus CheckMutex SQL注入漏洞
 用友 畅捷通T+ GetDecAllUsers 信息泄露漏洞
 用友 畅捷通远程通 GNRemote.dll SQL注入漏洞
+用友 U9 DynamaticExport.aspx 任意文件读取漏洞
+用友 U8Cloud FilterCondAction SQL注入漏洞
+用友 NC-Cloud process SQL注入漏洞
+用友 NC FormItemServlet SQL注入漏洞
+用友 NC-Cloud blobRefClassSearch FastJson反序列化漏洞
+用友 U8cloud esnserver 远程命令执行漏洞
+用友 U8-CRM ajaxgetborrowdata.php SQL注入漏洞
+用友 NC Cloud queryPsnInfo SQL注入漏洞
+用友 U8 Cloud MeasureQResultAction SQL注入漏洞
+用友 NC yerfile/down SQL注入漏洞
+用友 NC checkekey SQL 注入漏洞
+用友 NC content SQL注入漏洞
+用友 U8-CRM-reservationcomplete 远程命令执行漏洞
+用友 U8-CRM-reservationcomplete 身份认证绕过漏洞
+用友 U8 Cloud approveservlet SQL注入漏洞
+用友 YonBIP yonbiplogin任意文件读取漏洞
+用友 U8 Cloud MultiRepChooseAction SQL注入漏洞
+用友 NC IMetaWebService4BqCloud数据源SQL注入漏洞
 ```
