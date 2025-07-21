@@ -14,7 +14,14 @@
 
 ## 编译
 ### 跨平台
-可以通过`go env -w [variable]`使用交叉编译
+- 在CMD中，可以通过配置`go env -w [variable]`使用交叉编译
+- 在Goland IDE的Terminal中，可以使用`$env:GOOS="darwin"; $env:GOARCH="amd64"; go build -o ./bin`使用交叉编译
+
+参考值：
+```bash
+GOOS：linux、windows、darwin(macOS)
+GOARCH: amd64、arm、arm64
+```
 
 ### 打包
 ```bash
