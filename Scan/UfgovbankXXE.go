@@ -40,9 +40,9 @@ func UfgovbankScan(address string, client *http.Client, Red string, Green string
 	}
 
 	// 检查漏洞是否存在
-	if response.StatusCode == http.StatusOK && strings.Contains(string(body), "ufgov") || strings.Contains(string(body), "lineNumber") {
+	if strings.Contains(string(body), "ufgov") || strings.Contains(string(body), "lineNumber") {
 		result := ufgovbank + "：" + urls
-		output := fmt.Sprintf("["+Green+"%s"+Reset+"] ["+Green+"+"+Reset+"] 存在%s：%s", currentTime, ufgovbank, urls)
+		output := fmt.Sprintf("[%s%s%s] [%s+%s] 存在%s：%s", Green, currentTime, Reset, Green, Reset, ufgovbank, urls)
 		fmt.Println(output)
 
 		// 保存结果到文件
