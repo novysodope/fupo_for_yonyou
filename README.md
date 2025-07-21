@@ -104,7 +104,7 @@ HTTP代理：-proxy http://127.0.0.1:8080
 用友 U8-CRM-reservationcomplete 远程命令执行漏洞
 用友 U8-CRM-reservationcomplete 身份认证绕过漏洞
 用友 U8 Cloud approveservlet SQL注入漏洞
-用友 YonBIP yonbiplogin任意文件读取漏洞
+用友 YonBIP yonbiplogin 任意文件读取漏洞
 用友 U8 Cloud MultiRepChooseAction SQL注入漏洞
-用友 NC IMetaWebService4BqCloud数据源SQL注入漏洞
+用友 NC IMetaWebService4BqCloud SQL注入漏洞
 ```
