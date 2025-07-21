@@ -209,6 +209,6 @@ func helpArg() {
 	fmt.Println("用友 YonBIP yonbiplogin 任意文件读取漏洞")
 	fmt.Println("用友 U8 Cloud MultiRepChooseAction SQL注入漏洞")
 	fmt.Println("用友 NC IMetaWebService4BqCloud SQL注入漏洞")
-
+	
 	fmt.Println(Reset)
 }
