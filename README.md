@@ -6,6 +6,7 @@
 - 增加http代理：https://github.com/novysodope/fupo_for_yonyou/issues/9
 - 优化扫描代码，提高准确度
 - 优化任务代码，方便扩展
+- 优化结果显示，避免漏报
 - 其他：增加18个漏洞扫描模块
 #### fupo_for_yonyou 3.0
 - 开源
