@@ -11,6 +11,7 @@ import (
 func ModuleConf(address string, client *http.Client, Red, Green, Yellow, Reset, Cyan string) {
 	currentTime := time.Now().Format("15:04:05")
 
+	// 1. 把所有要 runScan 的函数和名称都放到一个切片里
 	scans := []struct {
 		fn   func(string, *http.Client, string, string, string, string, string, string)
 		name string
@@ -62,7 +63,26 @@ func ModuleConf(address string, client *http.Client, Red, Green, Yellow, Reset, 
 		{Scan.CheckMutexScan, "CheckMutexScan"},
 		{Scan.GetDecAllUsersScan, "GetDecAllUsersScan"},
 		{Scan.GNRemoteScan, "GNRemoteScan"},
+		{Scan.DynamaticExportscan, "DynamaticExportscan"},
+		{Scan.FilterCondActionscan, "FilterCondActionscan"},
+		{Scan.ProcessSQLScan, "ProcessSQLScan"},
+		{Scan.FormItemServletScan, "FormItemServletScan"},
+		{Scan.BlobRefClassSearchScan, "BlobRefClassSearchScan"},
+		{Scan.EsnserverScan, "EsnserverScan"},
+		{Scan.AjaxgetborrowdataScan, "AjaxgetborrowdataScan"},
+		{Scan.QueryPsnInfoScan, "QueryPsnInfoScan"},
+		{Scan.MeasureQResultActionScan, "MeasureQResultActionScan"},
+		{Scan.Yerfile_downscan, "Yerfile_downscan"},
+		{Scan.CheckekeyScan, "CheckekeyScan"},
+		{Scan.Link_contentScan, "Link_contentScan"},
+		{Scan.ReservationcompletetScan, "ReservationcompletetScan"},
+		{Scan.ReservationcompleteScan, "ReservationcompleteScan"},
+		{Scan.ApproveservletScan, "ApproveservletScan"},
+		{Scan.YonbiploginScan, "YonbiploginScan"},
+		{Scan.MultiRepChooseActionScan, "MultiRepChooseActionScan"},
+		{Scan.IMetaWebService4BqCloudScan, "IMetaWebService4BqCloudScan"},
 	}
+
 	for _, sc := range scans {
 		runScan := func() {
 			defer func() {
@@ -75,5 +95,6 @@ func ModuleConf(address string, client *http.Client, Red, Green, Yellow, Reset, 
 		runScan()
 	}
 
+	// 3. 最后打印总数
 	fmt.Printf("扫描完成，共扫描了 %d 个模块，请注意查看保存的结果\n", len(scans))
 }
